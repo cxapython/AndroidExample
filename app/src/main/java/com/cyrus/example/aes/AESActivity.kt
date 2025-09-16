@@ -17,6 +17,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.Text
@@ -37,7 +39,14 @@ class AESActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AESUI()
+            MaterialTheme {
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    AESUI()
+                }
+            }
         }
     }
 }
@@ -68,14 +77,14 @@ fun AESUI() {
         Text(
             text = "输入: $inputText",
             fontSize = 15.sp,
-            color = Color.White,
+            color = MaterialTheme.colorScheme.onBackground,
             modifier = Modifier.padding(top = 16.dp)
         )
 
         Spacer(modifier = Modifier.height(16.dp))
 
         Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-            Text("编码方式：", fontSize = 18.sp, color = Color.White)
+            Text("编码方式：", fontSize = 18.sp, color = MaterialTheme.colorScheme.onBackground)
             Spacer(modifier = Modifier.width(8.dp))
             ModeDropdownMenu(selectedMode) { selectedMode = it }
         }
@@ -101,7 +110,6 @@ fun AESUI() {
                 Text(
                     "标准 AES 加密",
                     fontSize = 12.sp,
-                    color = Color.White,
                 )
             }
 
@@ -125,7 +133,6 @@ fun AESUI() {
                 Text(
                     "标准 AES 解密",
                     fontSize = 12.sp,
-                    color = Color.White,
                 )
             }
         }
@@ -145,7 +152,6 @@ fun AESUI() {
                 Text(
                     "标准 Java AES 加密",
                     fontSize = 12.sp,
-                    color = Color.White,
                 )
             }
 
@@ -162,7 +168,6 @@ fun AESUI() {
                 Text(
                     "标准 Java AES 解密",
                     fontSize = 12.sp,
-                    color = Color.White,
                 )
             }
         }
@@ -170,7 +175,7 @@ fun AESUI() {
         Text(
             text = showText,
             fontSize = 15.sp,
-            color = Color.White,
+            color = MaterialTheme.colorScheme.onBackground,
             modifier = Modifier.align(Alignment.Start).padding(top = 16.dp)
         )
     }

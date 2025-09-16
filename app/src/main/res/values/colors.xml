@@ -7,4 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Tab 按钮主题色，可被夜间模式覆盖 -->
+    <color name="tab_button_stroke">#33000000</color>
+    <color name="tab_button_ripple">#1F000000</color>
 </resources>

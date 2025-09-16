@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="安全 &amp; 反调试"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowOrderPreserved="false">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_antidebug"
+                style="@style/Style.TabActionButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:text="反调试检测" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_sigtrap"
+                style="@style/Style.TabActionButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:text="SIGTRAP 反调试" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_hook"
+                style="@style/Style.TabActionButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:text="Hook" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_root"
+                style="@style/Style.TabActionButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:text="Root" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_device_fingerprint"
+                style="@style/Style.TabActionButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:text="设备指纹" />
+
+        </GridLayout>
+
+    </LinearLayout>
+</ScrollView>

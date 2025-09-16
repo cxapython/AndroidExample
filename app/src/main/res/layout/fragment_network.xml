@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="网络 &amp; 动态分析"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowOrderPreserved="false">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_okhttp"
+                style="@style/Style.TabActionButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:text="OkHttp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_retrofit"
+                style="@style/Style.TabActionButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:text="Retrofit" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_anti_sniff"
+                style="@style/Style.TabActionButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:text="反抓包" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_sohooker"
+                style="@style/Style.TabActionButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:text="动态篡改 so 函数返回值" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_so_unpack"
+                style="@style/Style.TabActionButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:text="so 脱壳" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_fart"
+                style="@style/Style.TabActionButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:text="FART" />
+
+        </GridLayout>
+
+    </LinearLayout>
+</ScrollView>

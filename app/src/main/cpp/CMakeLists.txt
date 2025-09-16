@@ -6,8 +6,8 @@ find_library( # Sets the name of the path variable.
         # Specifies the NDK library that you want CMake to locate.
         log)
 
-# 全局启用指令替换
-add_definitions("-mllvm -sub")
+# 生产环境编译：禁用 OLLVM 自定义 LLVM Pass（NDK clang 不支持）
+# add_definitions("-mllvm -sub")
 
 ## JNI示例 ##########################################################################################
 
@@ -118,10 +118,10 @@ add_library( # 设置库的名称
         ollvm-lib.cpp)
 
 # 为 ollvm-lib 动态库启用虚假控制流
-target_compile_options(
-        ollvm-lib
-        PRIVATE
-        -mllvm -bcf)
+# target_compile_options(
+#         ollvm-lib
+#         PRIVATE
+#         -mllvm -bcf)
 
 target_link_libraries( # 将 log 库链接到目标库
         ollvm-lib
@@ -327,10 +327,10 @@ add_library( # 设置库的名称
 )
 
 # 为 aes 动态库启用字符串加密
-target_compile_options(
-        aes
-        PRIVATE
-        -mllvm -sobf)
+# target_compile_options(
+#         aes
+#         PRIVATE
+#         -mllvm -sobf)
 
 # 抹除符号
 set_target_properties(aes PROPERTIES LINK_FLAGS "-Wl,--version-script=${CMAKE_SOURCE_DIR}/hide.map")
@@ -358,10 +358,10 @@ add_library( # 设置库的名称
 )
 
 # 为 cyrus_studio_hook 动态库启用字符串加密
-target_compile_options(
-        cyrus_studio_hook
-        PRIVATE
-        -mllvm -sobf)
+# target_compile_options(
+#         cyrus_studio_hook
+#         PRIVATE
+#         -mllvm -sobf)
 
 # 抹除符号
 set_target_properties(aes PROPERTIES LINK_FLAGS "-Wl,--version-script=${CMAKE_SOURCE_DIR}/hide.map")
@@ -388,10 +388,10 @@ add_library( # 设置库的名称
 )
 
 # 为 fart 动态库启用字符串加密
-target_compile_options(
-        fart
-        PRIVATE
-        -mllvm -sobf)
+# target_compile_options(
+#         fart
+#         PRIVATE
+#         -mllvm -sobf)
 
 # 抹除符号
 set_target_properties(fart PROPERTIES LINK_FLAGS "-Wl,--version-script=${CMAKE_SOURCE_DIR}/hide.map")
@@ -416,10 +416,10 @@ add_library( # 设置库的名称
 )
 
 # 为 so_unpack 动态库启用字符串加密
-target_compile_options(
-        so_unpack
-        PRIVATE
-        -mllvm -sobf)
+# target_compile_options(
+#         so_unpack
+#         PRIVATE
+#         -mllvm -sobf)
 
 # 抹除符号
 set_target_properties(so_unpack PROPERTIES LINK_FLAGS "-Wl,--version-script=${CMAKE_SOURCE_DIR}/hide.map")

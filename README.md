@@ -1,6 +1,56 @@
+### 当前环境参数
+
+- 操作系统: macOS 14.6 (darwin 24.6.0)
+- JDK: 17.0.7
+- Gradle Wrapper: 8.11.1
+- Android Gradle Plugin (AGP): 8.9.1
+- Kotlin: 2.0.0
+- NDK: 27.1.12297006
+- CMake: 3.22.1
+- compileSdk: 34
+- targetSdk: 34
+- minSdk: 26
+- 设备: OnePlus 9 Pro (Android 13)
+- 备注: 已临时注释 OLLVM 自定义编译参数（见 `app/src/main/cpp/CMakeLists.txt` 中 `-mllvm -sub/-bcf/-sobf`），后续修复可去掉注释恢复。
+
 # AndroidExample
 
 安卓逆向相关文章中的示例代码。
+
+### 当前功能（按首页 Tab 分类）
+
+- 安全
+  - 反调试检测（AntiDebugActivity）
+  - SIGTRAP 反调试（Toast 检测）
+  - Hook（SoHookerActivity）
+  - Root（RootActivity）
+  - 设备指纹（DeviceFingerprintActivity）
+
+- Native
+  - JNI 示例（JNIExampleActivity）
+  - 汇编（AssemblyActivity）
+  - 系统调用 syscall（SyscallActivity）
+  - OLLVM 示例（OLLVMActivity）
+  - VMP 示例（VMPActivity）
+  - Unicorn（UnicornActivity）
+  - Unidbg（UnidbgActivity）
+  - Frida 反汇编（FridaDisassembleActivity）
+
+- 加密
+  - AES（Native + Java，模式：CBC/ECB/CTR）（AESActivity）
+  - Base64（Base64Activity）
+  - CRC32（CRC32Activity）
+  - MD5（MD5Activity）
+  - SHA1（SHA1Activity）
+  - HMAC（HMACActivity）
+
+- 网络/动态分析
+  - OkHttp（OkHttpActivity）
+  - Retrofit（RetrofitActivity）
+  - 反抓包（AntiSniffActivity）
+  - 动态篡改 so 函数返回值（SoHookerActivity）
+  - so 脱壳（SoUnpackActivity）
+  - FART（FartActivity）
 
 文章索引：
 - [JNI 方法真实执行流长啥样？IDA × Frida 自动化 Trace 一探究竟](https://cyrus-studio.github.io/blog/posts/jni-%E6%96%B9%E6%B3%95%E7%9C%9F%E5%AE%9E%E6%89%A7%E8%A1%8C%E6%B5%81%E9%95%BF%E5%95%A5%E6%A0%B7ida--frida-%E8%87%AA%E5%8A%A8%E5%8C%96-trace-%E4%B8%80%E6%8E%A2%E7%A9%B6%E7%AB%9F/)
